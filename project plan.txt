@@ -1,0 +1,28 @@
+project plan
+     objective : develop E Commerce portal for selling garments
+
+functionality
+there would be two roles 
+    admin
+		add  garment detail
+		delete  garment detail
+		modify  garment detail
+		
+    user
+		View garments
+		place garment into cart
+		provide address
+technologies
+	 
+	front end 
+		html
+		css
+		javascript
+		angular js
+		jquery
+		bootstrap
+	middle
+		jsp
+		servlets
+	database
+		h2
