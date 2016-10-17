@@ -1,15 +1,14 @@
 <jsp:include page="menu.jsp"></jsp:include>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<c:set var="req" value="${pageContext.request}" />
 
-
-<div ng-app="myApp" ng-controller="namesCtrl" ng-init="test='${cat}'">
+<div ng-app="myApp" ng-controller="namesCtrl" ng-init="test='${pid}'">
 
 <p>Type a letter in the input field:</p>
 
-
 <p><input type="text" ng-model="test"></p>
+
+
+<jsp:include page="data.jsp" />
 
 <table border="1" width="50%" class="table table-hover table-responsive" >
 <tr>
@@ -31,8 +30,3 @@
 </table>
 
 </div>
-
-<jsp:include page="data.jsp" />
-
-
-

@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<c:set var="req" value="${pageContext.request}" />
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -10,19 +13,20 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="./resources/images/g1.jpg" alt="Chania" width="460" height="200">
+        <a href="${req.contextPath}/viewall/tshirt"> <img src="./resources/images/g1.jpg" alt="Chania" width="460" height="200"></a>
+        
       </div>
 
       <div class="item">
-        <img src="./resources/images/g2.jpg" alt="Chania" width="460" height="200">
+        <a href="${req.contextPath}/viewall/shirt"> <img src="./resources/images/g2.jpg" alt="Chania" width="460" height="200"></a>
       </div>
     
       <div class="item">
-        <img src="./resources/images/g3.jpg" alt="Flower" width="460" height="200">
+        <a href="${req.contextPath}/viewall/jeans"> <img src="./resources/images/g3.jpg" alt="Chania" width="460" height="200"></a>
       </div>
 
       <div class="item">
-        <img src="./resources/images/g4.jpg" alt="Flower" width="460" height="200">
+		<a href="${req.contextPath}/viewall/tshirt"> <img src="./resources/images/g4.jpg" alt="Chania" width="460" height="200"></a>
       </div>
     </div>
 
@@ -41,19 +45,19 @@
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-0"><img src="./resources/images/g1.jpg"></a>
+                                <a class="thumbnail" id="carousel-selector-0" href="${req.contextPath}/viewall/tshirt"><img src="./resources/images/g1.jpg"></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-1"><img src="./resources/images/g2.jpg" ></a>
+                                <a class="thumbnail" id="carousel-selector-1" href="${req.contextPath}/viewall/shirt"><img src="./resources/images/g2.jpg" ></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-2"><img src="./resources/images/g3.jpg" ></a>
+                                <a class="thumbnail" id="carousel-selector-2" href="${req.contextPath}/viewall/jeans"><img src="./resources/images/g3.jpg" ></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-3"><img src="./resources/images/g4.jpg" ></a>
+                                <a class="thumbnail" id="carousel-selector-3" href="${req.contextPath}/viewall/tshirt"><img src="./resources/images/g4.jpg" ></a>
                             </li>
 
                         </ul>                 
