@@ -4,18 +4,23 @@ package ms.shopping.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import ms.shopping.model.*;
 
 @Repository("productDAO")
+
 public class ProductDAOimpl implements ProductDAO
 {
 
 	
 	
-	List<productModel> prod;
+//	List<productModel> prod;
 	
+	/*
 	public ProductDAOimpl()
 	{
 		prod=new ArrayList<productModel>();
@@ -62,14 +67,21 @@ public class ProductDAOimpl implements ProductDAO
 		prod.add(p6);
 		prod.add(p7);
 		prod.add(p8);
-		
-		
-	}
+		}
+	*/
 
 	public List<productModel> getAll() {
 		
-		return prod;
+		return p
 	}
+
+	public productModel insert(productModel p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
 
 }
 

@@ -20,8 +20,8 @@
   <script src="${req.contextPath}/resources/js/angular.js"></script>
   
   
-<spring:url value="${req.contextPath}/resources/crunchify.css" var="crunchifyCSS" />
-<spring:url value="${req.contextPath}/resources/crunchify.js" var="crunchifyJS" />
+<spring:url value="/resources/res.css" var="crunchifyCSS" />
+<spring:url value="/resources/res.js" var="crunchifyJS" />
 <script src="${req.contextPath}/resources/js/jquery.min.js"></script>
 <link href="${crunchifyCSS}" rel="stylesheet" />
 <script src="${crunchifyJS}"></script>
