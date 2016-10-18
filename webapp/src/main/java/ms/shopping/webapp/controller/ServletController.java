@@ -32,11 +32,11 @@ public class ServletController {
 		return obj;
 	}
 	
-	@RequestMapping(value="/viewall/{cat}")
-	public ModelAndView viewall(@PathVariable("cat") String cat)
+	@RequestMapping(value="/viewall/{pid}")
+	public ModelAndView viewall(@PathVariable("pid") String pid)
 	{
 		ModelAndView obj = new ModelAndView("viewall");
-		obj.addObject("cat",""+cat);
+		obj.addObject("pid",""+pid);
 		return obj;
 	}
 	

@@ -1,7 +1,6 @@
 package ms.shopping.dao;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -11,11 +10,48 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ms.shopping.model.*;
 
-@Repository("productDAO")
+@Repository("ProductDAO")
+@Transactional
 
-public class ProductDAOimpl implements ProductDAO
+public class ProductDAOImpl implements ProductDAO
 {
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Override
+	@Transactional
+	public List<ProductModel> getAll()
+	{
+		return sessionFactory.getCurrentSession().createQuery("from ProductModel").list();
+	}
+	
+	@Override
+	@Transactional
+	public void insert(ProductModel p) {
+		sessionFactory.getCurrentSession().persist(p);		
+	}
+	
+	
+	@Override
+	@Transactional
+	public void update(ProductModel p) {
+		sessionFactory.getCurrentSession().update(p);		
+	}
+	
 
+
+	@Override
+	@Transactional
+	public ProductModel get(int pid) {		
+		return sessionFactory.getCurrentSession().get(ProductModel.class, pid);
+	}
+
+
+	@Override
+	@Transactional
+	public void delete(int pid) {
+		//
+	}
 	
 	
 //	List<productModel> prod;
@@ -70,15 +106,6 @@ public class ProductDAOimpl implements ProductDAO
 		}
 	*/
 
-	public List<productModel> getAll() {
-		
-		return p
-	}
-
-	public productModel insert(productModel p) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	
 

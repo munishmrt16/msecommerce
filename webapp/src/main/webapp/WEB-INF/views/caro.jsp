@@ -13,20 +13,20 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <a href="${req.contextPath}/viewall/tshirt"> <img src="./resources/images/g1.jpg" alt="Chania" width="460" height="200"></a>
+         <img src="./resources/images/p1.jpg" alt="Chania" >
         
       </div>
 
       <div class="item">
-        <a href="${req.contextPath}/viewall/shirt"> <img src="./resources/images/g2.jpg" alt="Chania" width="460" height="200"></a>
+         <img src="./resources/images/p2.jpg" alt="Chania">
       </div>
     
       <div class="item">
-        <a href="${req.contextPath}/viewall/jeans"> <img src="./resources/images/g3.jpg" alt="Chania" width="460" height="200"></a>
+        <img src="./resources/images/p3.jpg" alt="Chania" >
       </div>
 
       <div class="item">
-		<a href="${req.contextPath}/viewall/tshirt"> <img src="./resources/images/g4.jpg" alt="Chania" width="460" height="200"></a>
+		<img src="./resources/images/p4.jpg" alt="Chania" width="460" height="200">
       </div>
     </div>
 
@@ -41,23 +41,30 @@
     </a>
   </div>
 
-  <div class="row hidden-xs" id="slider-thumbs">
+  <div class="row hidden-xs" id="slider-thumbs" style="height:200px;width=20%">
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-0" href="${req.contextPath}/viewall/tshirt"><img src="./resources/images/g1.jpg"></a>
+                                <a class="thumbnail" id="carousel-selector-0" href="${req.contextPath}/viewall/men"><img src="./resources/images/p001.jpg" style="height:200px;width=20%"></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-1" href="${req.contextPath}/viewall/shirt"><img src="./resources/images/g2.jpg" ></a>
+                                <a class="thumbnail" id="carousel-selector-1" href="${req.contextPath}/viewall/women"><img src="./resources/images/p002.jpg" style="height:250px;width=20%" ></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-2" href="${req.contextPath}/viewall/jeans"><img src="./resources/images/g3.jpg" ></a>
+                                <a class="thumbnail" id="carousel-selector-2" href="${req.contextPath}/viewall/children"><img src="./resources/images/p003.jpg" style="height:250px;width=20%"></a>
+                            </li>
+							<li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-0" href="${req.contextPath}/viewall/men"><img src="./resources/images/p004.jpg" style="height:250px;width=20%"></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-3" href="${req.contextPath}/viewall/tshirt"><img src="./resources/images/g4.jpg" ></a>
+                                <a class="thumbnail" id="carousel-selector-1" href="${req.contextPath}/viewall/women"><img src="./resources/images/p005.jpg" style="height:250px;width=20%"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-2" href="${req.contextPath}/viewall/children"><img src="./resources/images/p006.jpg" style="height:250px;width=20%"></a>
                             </li>
 
                         </ul>                 
