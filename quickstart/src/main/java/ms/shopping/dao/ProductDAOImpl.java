@@ -10,20 +10,22 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ms.shopping.model.*;
 
-@Repository("ProductDAO")
-@Transactional
+@Repository
+
 
 public class ProductDAOImpl implements ProductDAO
 {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+		
 	@Override
 	@Transactional
 	public List<ProductModel> getAll()
 	{
 		return sessionFactory.getCurrentSession().createQuery("from ProductModel").list();
 	}
+	
 	
 	@Override
 	@Transactional
@@ -40,7 +42,7 @@ public class ProductDAOImpl implements ProductDAO
 	
 
 
-	@Override
+	@Override			 
 	@Transactional
 	public ProductModel get(int pid) {		
 		return sessionFactory.getCurrentSession().get(ProductModel.class, pid);
@@ -50,7 +52,7 @@ public class ProductDAOImpl implements ProductDAO
 	@Override
 	@Transactional
 	public void delete(int pid) {
-		//
+	sessionFactory.getCurrentSession().remove(get(pid));
 	}
 	
 	

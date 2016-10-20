@@ -1,59 +1,108 @@
 package ms.shopping.webapp.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ms.shopping.dao.ProductDAO;
-import ms.shopping.model.ProductModel;
+import ms.shopping.dao.*;
+import ms.shopping.model.*;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 
 	@Autowired
-	ProductDAO productDAO;
+	ProductDAO  p;
 	
-	@RequestMapping(value = "/product", method = RequestMethod.GET)
-	public ModelAndView adminProduct() {
-		
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("ifAdminClickedProduct",true);
-		ProductModel product = new ProductModel();
-		product.setNewProduct(true);
-		mv.addObject("ProductModel", product);
-		mv.addObject("Products", productDAO.getAll());
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public ModelAndView adminProduct()
+	{
+		ModelAndView mv = new ModelAndView("admin");
+		//ProductModel product = new ProductModel();
+		mv.addObject("products", p.getAll());
+		mv.addObject("product", new ProductModel());
 		return mv;		
-		
 	}
-
-	@RequestMapping(value = "/product/edit/{id}", method = RequestMethod.GET)
-	public ModelAndView adminEditProduct(@PathVariable("id") int id) {
-		
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("ifAdminClickedProduct",true);		
-		mv.addObject("product", productDAO.get(id));
-		mv.addObject("products", productDAO.getAll());
-		return mv;		
-		
-	}
-
-
-	@PostMapping("/product/save")
-	public String adminSaveProduct(@ModelAttribute("product") ProductModel product) {
-		if(product.isNewProduct()) {
-			productDAO.insert(product);
+	
+	@RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+	public ModelAndView getProduct(@PathVariable("id") int id) {
+		ModelAndView mv = new ModelAndView("admin");
+    	mv.addObject("product", p.get(id));
+    	mv.addObject("products", p.getAll());
+	    return mv;		
 		}
-		else {
-			productDAO.update(product);	
+	
+	@RequestMapping(value = "/delete/{pro}")
+	public String deleteProduct(@PathVariable("pro") Integer id) {
+	   	p.delete(id);
+		return "redirect:/admin/view";		
 		}
-		
-		return "redirect:/admin/product";				
+	
+	@RequestMapping("/save")
+	public String editProduct(@ModelAttribute("product") ProductModel prod)
+	{
+		if (prod.getPid()==0)
+		{
+			p.insert(prod);
+		}
+		else
+		{
+			p.update(prod);
+		}
+		return "redirect:/admin/view";
 	}
+	/*
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public String insertProduct(@Valid @ModelAttribute("pid") Product product, BindingResult results, Model model) {
+		if(results.hasErrors()) {
+			model.addAttribute("pid", product);
+			model.addAttribute("productData", productDao.getAll());
+			return ("admin");
+		}
+		productDao.addproduct(product);
+		if (product.getId() == 0) {
+			productDao.addproduct(product);
+		} else {
+
+			productDao.updateProduct(product);
+		}
+
+		return "redirect:/admin/viewall";
+	}
+	
+	@RequestMapping("/edit/{id}")
+	public String editProduct(@PathVariable("id") int id, Model model) {
+		model.addAttribute("pid", productDao.getProductById(id));
+		model.addAttribute("productData", productDao.getAll());
+		return "adminpage";
+	}
+*/
+ /*
+     @RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public String insertProduct(@Valid @ModelAttribute("product") Product product, BindingResult results, Model model) {
+		if(results.hasErrors()) {
+			model.addAttribute("pid", product);
+			model.addAttribute("productData", productDao.getAll());
+			return ("/viewall");
+		}
+		productDao.addproduct(product);
+		if (product.getId() == 0) {
+			productDao.addproduct(product);
+		} else {
+
+			productDao.updateProduct(product);
+		}
+
+		return "redirect:/admin/viewall";
+	}
+   
+  */
+	
+	
+	
+	
 }

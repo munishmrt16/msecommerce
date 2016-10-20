@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ms.shopping.dao.*;
 import ms.shopping.model.*;
 
+
 @Controller
 public class ProductController {
 
 	@Autowired
-	ProductDAO  p;
-	@RequestMapping("/product/all")
+	ProductDAO  pro;
+	@RequestMapping("/viewallproduct")
 	public @ResponseBody List<ProductModel> getProduct()
 	{
-		return p.getAll();
+		return pro.getAll();
 	}
-	
 }
+

@@ -1,44 +1,62 @@
+<jsp:include page="menu.jsp" />
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="req" value="${pageContext.request.contextPath}" />
+
 <div class="panel pannel-default">
-	<div class="panel-header">Product Form</div>
+	<div class="panel-header" align="center">Product Form</div>
 	<div class="panel-body">
-		<form:form action="${contextPath}/product/save" method="post"
+
+		<form:form action="${req}/admin/save" method="post"
 			modelAttribute="product">
-			<form:hidden path="pid" />
-			<form:hidden path="newProduct" />
-			<form:input path="pcat" cssClass="form-control" />
-			<form:input path="pname" cssClass="form-control" />
-			<form:input path="pprice" cssClass="form-control" />
-			<hr />
-			<input type="submit" value="Save" />
+			<table border="1" width="600" align="center">
+				<tr>
+					<td></td>
+					<td><form:hidden path="pid" /></td>
+				</tr>
+				<tr>
+					<td>Product Category</td>
+					<td><form:input path="pcat" cssClass="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Product Name</td>
+					<td><form:input path="pname" cssClass="form-control" /></td>
+				</tr>
+				<tr>
+					<td>Product Price</td>
+					<td><form:input path="pprice" cssClass="form-control" /></td>
+				</tr>
+				<tr>
+					<td colspan=2 align="center">
+					<form:hidden path="purl" /><img src="${req}/resources/images/${product.purl}.jpg" /> </td>
+				</tr>
+				<tr align="center">
+					<td align="center"><input type="submit" value="Save" /></td>
+					<td align="center"><input type="reset" value="Reset" /></td>
+				</tr>
+			</table>
 		</form:form>
 	</div>
 </div>
-	
-<table class="table table-striped">
 
+<table class="table table-striped">
 	<tr>
-		<th>Id</th>
-		<th>Name</th>
-		<th>Price</th>
+		<th>Product Id</th>
+		<th>Product Name</th>
+		<th>Product Price</th>
 		<th>&#160;</th>
 	</tr>
 
-	<c:forEach items="${products}" var="product">	
+	<c:forEach items="${products}" var="product">
 		<tr>
-			<td>${product.id}</td>
-			<td>${product.name}</td>
-			<td>${product.price}</td>
-			<td>				
-				<a href="${contextPath}/product/edit/${product.id}" class="btn btn-sm btn-primary">Edit</a>&#160;
-				<a href="${contextPath}/product/delete/${product.id}" class="btn btn-sm btn-primary">Delete</a>			
-			</td>		
+			<td>${product.pid}</td>
+			<td>${product.pname}</td>
+			<td>${product.pprice}</td>
+			<td><a href="${req}/admin/view/${product.pid}"
+				class="btn btn-sm btn-primary">View</a>&#160; <a
+				href="${req}/admin/delete/${product.pid}"
+				class="btn btn-sm btn-primary">Delete</a></td>
 		</tr>
 	</c:forEach>
-
-
-
 </table>
 
-
-	

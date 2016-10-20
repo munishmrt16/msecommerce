@@ -7,6 +7,41 @@ import javax.persistence.Id;
 
 @Entity
 
+public class UserDetailModel {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int userid;
+	String username;
+	String pwd;
+	
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	
+	@Override
+	public String toString() {
+		return "UserDetailModel [userid=" + userid + ",username=" + username + ",pwd=" + pwd + "]";
+	}
+}
+
+
+/*
+
 public class ProductModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -73,4 +108,6 @@ public class ProductModel {
 	 * @Override public String toString() { return "ProductModel [id=" + id +
 	 * ", name=" + name + ", price=" + price + "]"; }
 	 */
+/*
 }
+*/

@@ -1,5 +1,12 @@
-<jsp:include page="menu.jsp"/>
 
+
+<jsp:include page="menu.jsp"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<c:set var="req" value="${pageContext.request.contextPath}" />
+
+<script src="webapp/resources/js/angular.js"></script>
+
+  
 <div ng-app="myApp" ng-controller="myCtrl" ng-init="test='${pid}'"> 
 
 <p>Search:<input type="text" ng-model="test"></p>
@@ -23,22 +30,18 @@
 <td>{{x.pname}}</td>
 <td>{{x.purl}}</td>
 <td>{{x.pprice}}</td>
-
-<td><img src="/webapp/resources/images/{{x.purl}}.jpg" width="50" height="50"></td>
+<!-- <td><img src="/webapp/resources/images/{{x.purl}}.jpg" width="50" height="50"></td> -->
 <td><a href="/webapp/view/{{x.pid}}" class="btn btn-info" role="button">View</a></td>
 <td> <a href="#" class="btn btn-info" role="button">Add to cart</a></td>
 </tr>
 </table>
-
+</div>
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $http) {
- $http.get("/webapp/product/all")
+ $http.get("/product/all")
   .then(function(response) {
       $scope.names= response.data;
   });
 });
 </script>
-
-
-

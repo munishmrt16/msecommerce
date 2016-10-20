@@ -18,10 +18,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan({"ms"})
 
 
-
 public class HibernateConfiguration {
 	
-	private final static String JDBC_URL = "jdbc:h2:tcp://localhost/~/test";
+	private final static String JDBC_URL = "jdbc:h2:tcp://localhost/~/ecom";
 	private final static String JDBC_DRIVER_CLASS = "org.h2.Driver";		
 	private final static String JDBC_USERNAME = "sa";
 	private final static String JDBC_PASSWORD = "";

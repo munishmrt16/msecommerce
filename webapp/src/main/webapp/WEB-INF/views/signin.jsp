@@ -17,15 +17,7 @@ input.ng-valid {
 <div class="container">
   <form class="form-horizontal" name="myForm">
   
-  <div class="form-group">
-   <label class="control-label col-sm-2" for="email">Name:</label>
-   <div class="col-sm-10">
-<input name="myName" ng-model="myName" placeholder="Enter Name"  class="form-control" required>
-<span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span>
-   </div>
-    </div>
-
-	<div class="form-group">
+  	<div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
         <input type="email" ng-model="myInput" class="form-control" id="email" placeholder="Enter email" name="myInput" required>

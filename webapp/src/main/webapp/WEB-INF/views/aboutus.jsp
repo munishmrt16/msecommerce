@@ -1,8 +1,7 @@
 <jsp:include page="menu.jsp" />
 
-<h1>About US </h1>
+<img src="/webapp/resources/images/aboutus.jpg">
   
-
 <jsp:include page="footer.jsp" />
 
 

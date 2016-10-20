@@ -1,9 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <c:set var="req" value="${pageContext.request}" />
-
-
 
 <head>
   <title>Online Garment Shopping</title>
@@ -18,7 +16,7 @@
   <script src="${req.contextPath}/resources/js/bootstrap.min.js"></script>
   <script src="${req.contextPath}/resources/js/bootstrap.min.js"></script>
   <script src="${req.contextPath}/resources/js/thumbnail.js"></script>
-  <script src="${req.contextPath}/resources/js/angular.js"></script>
+
   
   
 <spring:url value="/resources/res.css" var="crunchifyCSS" />
@@ -37,6 +35,6 @@
   </style>
   
   </head>
-
+<body background="./resources/images/backgroundimg.jpg" >
   
   

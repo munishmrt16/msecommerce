@@ -33,7 +33,7 @@ public class ServletController {
 	}
 	
 	@RequestMapping(value="/viewall/{pid}")
-	public ModelAndView viewall(@PathVariable("pid") String pid)
+	public ModelAndView viewallprod(@PathVariable("pid") String pid)
 	{
 		ModelAndView obj = new ModelAndView("viewall");
 		obj.addObject("pid",""+pid);
@@ -49,13 +49,14 @@ public class ServletController {
 	}
 	
 	@RequestMapping(value="/viewall")
-	public ModelAndView viewall()
+	public ModelAndView viewallmenu()
 	{
 		ModelAndView obj = new ModelAndView();
 		obj.setViewName("viewall");
 		return obj;
 	}
 	
+		
 	@RequestMapping("/signin")
 	public ModelAndView signin(){
 		
@@ -71,7 +72,5 @@ public class ServletController {
 		obj.setViewName("signup");
 		return obj;
 	}
-	
-
 }
 
